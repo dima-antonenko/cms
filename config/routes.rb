@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  resources :post_categories
 
-  resources :posts
+  resources :post_categories do
+    resources :posts
+  end
 
-  resources :product_categories
+  resources :product_categories do
+    resources :products
+  end
 
-  resources :products
+  root 'static#home'
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
