@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310003727) do
+ActiveRecord::Schema.define(version: 20150310012653) do
 
   create_table "post_categories", force: :cascade do |t|
     t.string   "title"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20150310003727) do
     t.string   "meta_keywords"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+    t.decimal  "price"
   end
 
   add_index "products", ["image"], name: "index_products_on_image"
@@ -81,6 +82,7 @@ ActiveRecord::Schema.define(version: 20150310003727) do
   add_index "products", ["meta_keywords"], name: "index_products_on_meta_keywords"
   add_index "products", ["meta_title"], name: "index_products_on_meta_title"
   add_index "products", ["name"], name: "index_products_on_name"
+  add_index "products", ["price"], name: "index_products_on_price"
 
   create_table "site_variables", force: :cascade do |t|
     t.string   "name"
