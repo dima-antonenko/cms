@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309000724) do
+ActiveRecord::Schema.define(version: 20150310003727) do
 
   create_table "post_categories", force: :cascade do |t|
     t.string   "title"
@@ -81,5 +81,15 @@ ActiveRecord::Schema.define(version: 20150309000724) do
   add_index "products", ["meta_keywords"], name: "index_products_on_meta_keywords"
   add_index "products", ["meta_title"], name: "index_products_on_meta_title"
   add_index "products", ["name"], name: "index_products_on_name"
+
+  create_table "site_variables", force: :cascade do |t|
+    t.string   "name"
+    t.string   "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "site_variables", ["name"], name: "index_site_variables_on_name"
+  add_index "site_variables", ["value"], name: "index_site_variables_on_value"
 
 end
