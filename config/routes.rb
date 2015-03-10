@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :line_items
+
+  resources :carts
+
   resources :post_categories do
     resources :posts
   end
