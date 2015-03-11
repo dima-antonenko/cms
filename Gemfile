@@ -25,6 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails_admin', '~> 0.6.6'
 
+gem 'cancan', '~> 1.6.10'
+
+gem 'ckeditor', '~> 4.1.1'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
