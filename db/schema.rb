@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311004142) do
+ActiveRecord::Schema.define(version: 20150311042018) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -113,12 +113,27 @@ ActiveRecord::Schema.define(version: 20150311004142) do
 
   create_table "site_variables", force: :cascade do |t|
     t.string   "name"
-    t.string   "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "value"
   end
 
   add_index "site_variables", ["name"], name: "index_site_variables_on_name"
-  add_index "site_variables", ["value"], name: "index_site_variables_on_value"
+
+  create_table "static_pages", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "meta_title"
+    t.string   "meta_description"
+    t.string   "meta_keywords"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "static_pages", ["content"], name: "index_static_pages_on_content"
+  add_index "static_pages", ["meta_description"], name: "index_static_pages_on_meta_description"
+  add_index "static_pages", ["meta_keywords"], name: "index_static_pages_on_meta_keywords"
+  add_index "static_pages", ["meta_title"], name: "index_static_pages_on_meta_title"
+  add_index "static_pages", ["title"], name: "index_static_pages_on_title"
 
 end
