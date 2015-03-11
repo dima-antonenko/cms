@@ -1,3 +1,6 @@
 <% @cart.line_items.each do |item| %>
 	<%= item.quantity %>  --  <%= item.product.name %><br/>
 <% end %>
+
+<%= button_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Удалить все товары из корзины ?' } %>
+<%= button_to 'Оформить заказ', new_order_path, method: :get  %>
