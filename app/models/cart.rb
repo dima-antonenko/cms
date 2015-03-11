@@ -15,4 +15,11 @@ class Cart < ActiveRecord::Base
 
 	end
 
+
+
+	def delete_product(product_id)
+		Line_item.find(product_id).destroy
+	end
+
+
 end

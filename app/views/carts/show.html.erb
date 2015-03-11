@@ -1,5 +1,7 @@
 <% @cart.line_items.each do |item| %>
-	<%= item.quantity %>  --  <%= item.product.name %><br/>
+	<%= item.quantity %>  --  <%= item.product.name %> -- 
+	<%= link_to 'Удалить', method: :delete, data: { confirm: 'Are you sure?' } %>
+	<br/>
 <% end %>
 
 <%= button_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Удалить все товары из корзины ?' } %>
