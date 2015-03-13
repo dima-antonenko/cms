@@ -18,8 +18,12 @@ RailsAdmin.config do |config|
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
 
-  config.authorize_with :cancan
+  #config.authorize_with :cancan
 
+  config.authenticate_with do
+    warden.authenticate! scope: :user
+  end
+  config.current_user_method(&:current_user)
 
 
   config.actions do
@@ -51,6 +55,7 @@ RailsAdmin.config do |config|
   config.model Product do
     edit do
       field :name
+      field :avatar
       field :sku 
       field :product_category
       field :price

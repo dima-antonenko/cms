@@ -29,7 +29,11 @@ gem 'cancan', '~> 1.6.10'
 
 gem 'devise'
 
+gem 'paperclip', '~> 4.2.1'
+
 gem 'ckeditor', '~> 4.1.1'
+
+gem 'rmagick', '2.13.4'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
