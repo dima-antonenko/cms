@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313060801) do
+ActiveRecord::Schema.define(version: 20150314053719) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -81,8 +81,9 @@ ActiveRecord::Schema.define(version: 20150313060801) do
     t.string   "meta_title"
     t.string   "meta_description"
     t.string   "meta_keywords"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "product_category_id"
   end
 
   add_index "product_categories", ["meta_description"], name: "index_product_categories_on_meta_description"
