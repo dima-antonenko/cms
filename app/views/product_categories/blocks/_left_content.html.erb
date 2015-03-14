@@ -1,0 +1,19 @@
+<section class="col-lg-9 col-md-9 col-sm-9">
+	<h2 class="tt_uppercase color_dark m_bottom_25"><%= @product_category.name %></h2>
+	<div class="clearfix m_bottom_40">
+	<div class="photoframe f_left shadow wrapper m_right_30 m_sm_bottom_5 m_sm_right_20 m_xs_bottom_15 f_xs_none d_xs_inline_b">
+		<img class="tr_all_long_hover" src="/images/category_img_7.jpg" alt="">
+	</div>
+	<p class="m_bottom_10"><%= @product_category.description %></p>
+	</div>
+	<hr class="m_bottom_10 divider_type_3">
+	<% unless  @product_category.product_categories.size == 0 %>
+		<%= render '/product_categories/blocks/categories_list' %>
+	<% end %>
+
+	<% unless  @product_category.products.size == 0 %>
+		<%= render '/product_categories/blocks/products_list' %>
+	<% end %>
+	
+	<hr class="m_bottom_10 divider_type_3">
+</section>

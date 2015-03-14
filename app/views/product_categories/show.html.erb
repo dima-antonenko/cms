@@ -1,4 +1,13 @@
-<% @product_category.products.each do |product| %>
-	<%= product.name %>
-	
-<% end %>
+<% provide(:title, @product_category.meta_title) %>
+<% provide(:description, @product_category.meta_description) %>
+<% provide(:keywords, @product_category.meta_keywords) %>
+			<div class="page_content_offset">
+				<div class="container">
+					<div class="row clearfix">
+						<!--left content column-->
+						<%= render 'product_categories/blocks/left_content' %>
+						<!--right column-->
+						<%= render '/product_categories/blocks/sidebar/sidebar' %>
+					</div>
+				</div>
+			</div>

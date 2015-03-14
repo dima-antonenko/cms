@@ -1,0 +1,27 @@
+<style type="text/css">
+	.category_grid .product_item{
+		clear: none;
+		float: left;
+	}
+</style>
+<section class="products_container category_grid clearfix m_bottom_15">
+								<!--product item-->
+<% @product_category.products.each do |product| %>
+								<div class="product_item hit w_xs_full">
+									<figure class="r_corners photoframe type_2 t_align_c tr_all_hover shadow relative">
+										<!--product preview-->
+										<a href="#" class="d_block relative wrapper pp_wrap m_bottom_15">
+											<img src="/images/product_img_1.jpg" class="tr_all_hover" alt="">
+											<span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Предосмотр</span>
+										</a>
+										<!--description and price of product-->
+										<figcaption>
+											<h5 class="m_bottom_10"><a href="#" class="color_dark"><%= product.name %></a></h5>
+											<p class="scheme_color f_size_large m_bottom_15"><%= product.price %> р.</p>
+
+											<button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15">Купить</button>
+										</figcaption>
+									</figure>
+								</div>
+<% end %>
+							</section>
