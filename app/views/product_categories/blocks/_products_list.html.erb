@@ -3,6 +3,9 @@
 		clear: none;
 		float: left;
 	}
+	.photoframe .d_block img {
+		height: 160px !important;
+	}
 </style>
 <section class="products_container category_grid clearfix m_bottom_15">
 								<!--product item-->
@@ -11,7 +14,8 @@
 									<figure class="r_corners photoframe type_2 t_align_c tr_all_hover shadow relative">
 										<!--product preview-->
 										<a href="#" class="d_block relative wrapper pp_wrap m_bottom_15">
-											<img src="/images/product_img_1.jpg" class="tr_all_hover" alt="">
+											<!-- <img src="/images/product_img_1.jpg" class="tr_all_hover" alt=""> -->
+											<%= image_tag product.avatar.url(:thumb), class: "tr_all_hover" %>
 											<span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Предосмотр</span>
 										</a>
 										<!--description and price of product-->

@@ -1,6 +1,10 @@
 <%# @product.avatar %>
 <%# image_tag @product.avatar.url %>
-
+<style > 
+	.product_single_preview{
+		width: auto;
+	}
+</style>
 			<div class="page_content_offset">
 				<div class="container">
 					<div class="row clearfix">
@@ -8,12 +12,13 @@
 						<section class="col-lg-12 col-md-12 col-sm-12 m_xs_bottom_30">
 							<div class="clearfix m_bottom_30 t_xs_align_c">
 						<div class="photoframe type_2 shadow r_corners f_left f_sm_none d_xs_inline_b product_single_preview relative m_right_30 m_bottom_5 m_sm_bottom_20 m_xs_right_0 w_mxs_full">
-							<span class="hot_stripe"><img src="images/sale_product.png" alt=""></span>
 							<div class="relative d_inline_b m_bottom_10 qv_preview d_xs_block">
-								<img id="zoom_image" src="/images/quick_view_img_7.jpg" data-zoom-image="images/preview_zoom_1.jpg" class="tr_all_hover" alt="">
-								<a href="/images/preview_zoom_1.jpg" class="d_block button_type_5 r_corners tr_all_hover box_s_none color_light p_hr_0">
+								<!-- <img id="zoom_image" src="/images/quick_view_img_7.jpg" data-zoom-image="images/preview_zoom_1.jpg" class="tr_all_hover" alt=""> -->
+								<%= image_tag @product.avatar.url(:medium), id: "zoom_image", class: "tr_all_hover" %>
+								<!-- <a href="/images/preview_zoom_1.jpg" class="d_block button_type_5 r_corners tr_all_hover box_s_none color_light p_hr_0">
 									<i class="fa fa-expand"></i>
 								</a>
+								-->
 							</div>
 							<!--carousel-->
 		
@@ -33,16 +38,21 @@
 									<td><%= @product.sku %></td>
 								</tr>
 							</table>
-							<h5 class="fw_medium m_bottom_10">Product Dimensions and Weight</h5>
+							<h5 class="fw_medium m_bottom_10">Краткие характеристики</h5>
 							<table class="description_table m_bottom_5">
 								<tr>
-									<td>Product Length:</td>
-									<td><span class="color_dark">10.0000M</span></td>
+									<td>Двигатель</td>
+									<td><span class="color_dark">3,2 л.</span></td>
 								</tr>
 								<tr>
-									<td>Product Weight:</td>
-									<td>10.0000KG</td>
+									<td>Тип кузова:</td>
+									<td>Седан</td>
 								</tr>
+								<tr>
+									<td>Год:</td>
+									<td>2014</td>
+								</tr>
+
 							</table>
 							<hr class="divider_type_3 m_bottom_15">
 							<div class="m_bottom_15">
@@ -67,41 +77,37 @@
 						</nav>
 						<section class="tabs_content shadow r_corners">
 							<div id="tab-1">
-								<p class="m_bottom_10">Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consecvtetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. </p>
-								<p class="m_bottom_15">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo. Ut pharetra augue nec augue. Nam elit agna,endrerit sit amet, tincidunt ac, viverra sed, nulla. Donec porta diam eu massa. Quisque diam lorem, interdum vitae,dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. </p>
-								<hr class="m_bottom_15">
-								Tags: <a href="#" class="color_dark">black</a>, <a href="#" class="color_dark">dresses</a>, 
-								<a href="#" class="color_dark">woman</a>, <a href="#" class="color_dark">sexy</a>
+								<p>Здесь описание товара</p>
 							</div>
 							<div id="tab-2">
-								<h5 class="fw_medium m_bottom_15">Item specifics:</h5>
+								<h5 class="fw_medium m_bottom_15">Характеристики товара:</h5>
 								<div class="row clearfix">
 									<div class="col-lg-6 col-md-6 col-sm-6 m_xs_bottom_15">
 										<div class="table_sm_wrap">
 											<table class="description_table type_3 m_xs_bottom_10">
 												<tr>
-													<td>Condition:</td>
-													<td>New with tags</td>
+													<td>Производитель:</td>
+													<td>BMW</td>
 												</tr>
 												<tr>
-													<td>Country of Manufacture:</td>
-													<td>China</td>
+													<td>Страна:</td>
+													<td>Германия</td>
 												</tr>
 												<tr>
-													<td>Style:</td>
-													<td>Flared Pleated Mini Skirt</td>
+													<td>Кузов:</td>
+													<td>Седан</td>
 												</tr>
 												<tr>
-													<td>Skirt Length:</td>
-													<td>38CM/14.82"</td>
+													<td>КПП:</td>
+													<td>Ручная</td>
 												</tr>
 												<tr>
-													<td>Waist:</td>
-													<td>66-80CM/25.9"-31.4"</td>
+													<td>Мощность</td>
+													<td>600 лс.</td>
 												</tr>
 												<tr>
-													<td>Occasion:</td>
-													<td>casual</td>
+													<td>Расход топлива:</td>
+													<td>10л / 100км</td>
 												</tr>
 											</table>
 										</div>
@@ -110,28 +116,28 @@
 										<div class="table_sm_wrap">
 											<table class="description_table type_3 m_xs_bottom_10">
 												<tr>
-													<td>Brand:</td>
-													<td>Chanel</td>
+													<td>Производитель:</td>
+													<td>BMW</td>
 												</tr>
 												<tr>
-													<td>Size Type:</td>
-													<td>Regular</td>
+													<td>Страна:</td>
+													<td>Германия</td>
 												</tr>
 												<tr>
-													<td>Bottoms Size (Women's):</td>
-													<td>One size</td>
+													<td>Кузов:</td>
+													<td>Седан</td>
 												</tr>
 												<tr>
-													<td>Material:</td>
-													<td>Cotton Blend</td>
+													<td>КПП:</td>
+													<td>Ручная</td>
 												</tr>
 												<tr>
-													<td>Length:</td>
-													<td>Mini</td>
+													<td>Мощность</td>
+													<td>600 лс.</td>
 												</tr>
 												<tr>
-													<td>Pattern:</td>
-													<td>Plaids &amp; Checks</td>
+													<td>Расход топлива:</td>
+													<td>10л / 100км</td>
 												</tr>
 											</table>
 										</div>
@@ -141,11 +147,11 @@
 							<div id="tab-3">
 								<div class="row clearfix">
 									<div class="col-lg-8 col-md-8 col-sm-8">
-										<h5 class="fw_medium m_bottom_15">Last Reviews</h5>
+										<h5 class="fw_medium m_bottom_15">Последние отзывы</h5>
 										<!--review-->
 										<article>
 											<div class="clearfix m_bottom_10">
-												<p class="f_size_medium f_left f_mxs_none m_mxs_bottom_5">By John Smith - Thursday, 26 December 2013</p>
+												<p class="f_size_medium f_left f_mxs_none m_mxs_bottom_5">Андрей</p>
 												<!--rating-->
 												<ul class="horizontal_list f_right f_mxs_none clearfix rating_list type_2">
 													<li class="active">
@@ -170,13 +176,13 @@
 													</li>
 												</ul>	
 											</div>
-											<p class="m_bottom_15">Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit. Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis. Donec sit amet eros. Lorem ipsum dolor sit amet, consecvtetuer adipiscing elit. Mauris fermentum dictum magna. Sed laoreet aliquam leo. Ut tellus dolor, dapibus eget, elementum vel, cursus eleifend, elit.</p>
+											<p class="m_bottom_15">Отличный автомобиль, полностью доволен, всем рекомендую.</p>
 										</article>
 										<hr class="m_bottom_15">
 										<!--review-->
 										<article>
 											<div class="clearfix m_bottom_10">
-												<p class="f_size_medium f_left f_mxs_none m_mxs_bottom_5">By Admin - Thursday, 26 December 2013</p>
+												<p class="f_size_medium f_left f_mxs_none m_mxs_bottom_5">Андрей</p>
 												<!--rating-->
 												<ul class="horizontal_list f_right f_mxs_none clearfix rating_list type_2">
 													<li class="active">
@@ -201,13 +207,13 @@
 													</li>
 												</ul>	
 											</div>
-											<p class="m_bottom_15">Vivamus eget nibh. Etiam cursus leo vel metus. Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse sollicitudin velit sed leo.</p>
+											<p class="m_bottom_15">Отличный автомобиль, полностью доволен, всем рекомендую.</p>
 										</article>
 										<hr class="m_bottom_15">
 										<!--review-->
 										<article>
 											<div class="clearfix m_bottom_10">
-												<p class="f_size_medium f_left f_mxs_none m_mxs_bottom_5">By Alan Doe - Thursday, 26 December 2013</p>
+												<p class="f_size_medium f_left f_mxs_none m_mxs_bottom_5">Андрей</p>
 												<!--rating-->
 												<ul class="horizontal_list f_right f_mxs_none clearfix rating_list type_2">
 													<li class="active">
@@ -232,18 +238,18 @@
 													</li>
 												</ul>	
 											</div>
-											<p class="m_bottom_15">Ut pharetra augue nec augue. Nam elit agna,endrerit sit amet, tincidunt ac, viverra sed, nulla. Donec porta diam eu massa. Quisque diam lorem, interdum vitae,dapibus ac, scelerisque vitae, pede. Donec eget tellus non erat lacinia fermentum. Donec in velit vel ipsum auctor pulvinar. Vestibulum iaculis lacinia est.</p>
+											<p class="m_bottom_15">Отличный автомобиль, полностью доволен, всем рекомендую.</p>
 										</article>
 									</div>
 									<div class="col-lg-4 col-md-4 col-sm-4">
-										<h5 class="fw_medium m_bottom_15">Write a Review</h5>
-										<p class="f_size_medium m_bottom_15">Now please write a (short) review....(min. 100, max. 2000 characters)</p>
+										<h5 class="fw_medium m_bottom_15">Оставить отзыв</h5>
+										<p class="f_size_medium m_bottom_15">Вы можете оставить свое мнение о товаре.</p>
 										<form>
 											<textarea class="r_corners full_width m_bottom_10 review_tarea"></textarea>
-											<p class="f_size_medium m_bottom_5">First: Rate the product. Please select a rating between 0 (poorest) and 5 stars (best).</p>
+											<p class="f_size_medium m_bottom_5">Оцените качество продукта.</p>
 											<div class="d_block full_width m_bottom_10">
 												<div class="d_block m_bottom_5 v_align_m">
-													<p class="f_size_medium d_inline_middle m_right_5">Rating:</p>
+													<p class="f_size_medium d_inline_middle m_right_5">Оценка:</p>
 													<!--rating-->
 													<ul class="horizontal_list clearfix rating_list type_2 d_inline_middle">
 														<li class="active">
@@ -268,19 +274,15 @@
 														</li>
 													</ul>
 												</div>
-												<div class="f_size_medium m_bottom_10 d_block">
-													<p class="d_inline_middle">Characters written:</p>
-													<input type="text" class="r_corners d_inline_middle type_2 m_left_5 m_sm_left_0 m_xs_left_5 mxw_0 small_field" value="0">
-												</div>
 											</div>
-											<button type="submit" class="r_corners button_type_4 tr_all_hover mw_0 color_dark bg_light_color_2">Submit</button>
+											<button type="submit" class="r_corners button_type_4 tr_all_hover mw_0 color_dark bg_light_color_2">Отправить</button>
 										</form>
 									</div>
 								</div>
 							</div>
 							<div id="tab-4">
 								<div class="iframe_video_wrap">
-									<iframe src="http://www.youtube.com/embed/Du8ld5hrqN0?wmode=transparent"></iframe>
+									<iframe src="https://www.youtube.com/embed/ZZwxq4syzAA"></iframe>
 								</div>
 							</div>
 						</section>

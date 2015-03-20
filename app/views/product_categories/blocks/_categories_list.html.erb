@@ -1,10 +1,16 @@
+<style type="text/css">
+	.horizontal_list .m_right_15 .d_block  img{
+		height: 91px;
+	}
+</style>
 <nav class="m_bottom_40">
 	<ul class="horizontal_list clearfix categories_nav_list m_xs_right_0 t_mxs_align_c">
 		<% @product_category.product_categories.each do |category| %>
 									<li class="m_right_15 f_mxs_none w_mxs_auto d_mxs_inline_b m_mxs_bottom_20">
 										<a href="<%= product_category_path(category) %>" class="d_block photoframe tr_all_hover shadow color_dark r_corners">
 											<span class="d_block wrapper">
-												<img class="tr_all_long_hover" src="/images/category_img_2.jpg" alt="">
+												<%= image_tag category.image.url(:thumb), class: "r_all_long_hover" %>
+												<!-- <img class="tr_all_long_hover" src="/images/category_img_2.jpg" alt=""> -->
 											</span>
 											<%= category.name %>
 										</a>

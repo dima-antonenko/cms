@@ -2,7 +2,8 @@
 	<h2 class="tt_uppercase color_dark m_bottom_25"><%= @product_category.name %></h2>
 	<div class="clearfix m_bottom_40">
 	<div class="photoframe f_left shadow wrapper m_right_30 m_sm_bottom_5 m_sm_right_20 m_xs_bottom_15 f_xs_none d_xs_inline_b">
-		<img class="tr_all_long_hover" src="/images/category_img_7.jpg" alt="">
+		<%= image_tag @product_category.image(:medium), class: "tr_all_hover" %>
+		<!-- <img class="tr_all_long_hover" src="/images/category_img_7.jpg" alt=""> -->
 	</div>
 	<p class="m_bottom_10"><%= @product_category.description %></p>
 	</div>
