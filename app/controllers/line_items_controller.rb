@@ -24,6 +24,10 @@ class LineItemsController < ApplicationController
   def edit
   end
 
+  def line_item_params
+    params.require(:line_item).permit(:product_id)
+  end
+
   # POST /line_items
   # POST /line_items.json
   def create

@@ -1,8 +1,104 @@
-<% @cart.line_items.each do |item| %>
-	<%= item.quantity %>  --  <%= item.product.name %> -- 
-	<%= link_to 'Удалить', method: :delete, data: { confirm: 'Are you sure?' } %>
-	<br/>
-<% end %>
+<style type="text/css">
+	.text-center{
+		text-align: center;
+	}
+	.clear-cart{
+		clear: none;
+	}
+</style>
 
-<%= button_to 'Очистить корзину', @cart, method: :delete, data: { confirm: 'Удалить все товары из корзины ?' } %>
-<%= button_to 'Оформить заказ', new_order_path, method: :get  %>
+			<div class="page_content_offset">
+				<div class="container">
+					<div class="row clearfix">
+						<!--left content column-->
+						<section class="col-lg-12 col-md-12 col-sm-12 m_xs_bottom_30 ">
+							<h2 class="tt_uppercase color_dark m_bottom_25">Корзина</h2>
+							<!--cart table-->
+							<table class="table_type_4 responsive_table full_width r_corners wraper shadow t_align_l t_xs_align_c m_bottom_30 ">
+								<thead>
+									<tr class="f_size_large">
+										<!--titles for td-->
+										<th>Название</th>
+										<th>Артикул</th>
+										<th colspan="2" class="text-center">Цена за еденицу</th>
+										<th>Количество</th>
+										<th>Стоимость</th>
+									</tr>
+								</thead>
+								
+								<tbody>
+									<tr>
+										<% @cart.line_items.each do |item| %>
+										<!--Product name and image-->
+										<td data-title="Product Image &amp; name" class="t_md_align_c">
+											<a href="#" class="d_inline_b m_left_5 color_dark"><%= item.product.name %> </a>
+										</td>
+										<!--product key-->
+										<td data-title="SKU"><%= item.product.sku %></td>
+										<!--product price-->
+										<td data-title="Price" colspan="2">
+											<p class="text-center" style="margin:0px auto;"><%= item.product.price %> р.</p>
+										</td>
+										<!--quanity-->
+										<td data-title="Quantity" class="text-center">
+											<!-- 
+											<div class="clearfix quantity r_corners d_inline_middle f_size_medium color_dark m_bottom_10">
+												
+												<button class="bg_tr d_block f_left" data-direction="down">-</button>
+												<input type="text" name="" readonly value="1" class="f_left">
+												<button class="bg_tr d_block f_left" data-direction="up">+</button>
+												
+
+											</div>
+											-->
+											<p class="f_size_large fw_medium scheme_color text-center"><%= item.quantity %></p>
+											
+											<div>
+
+												<!-- <a href="#" class="color_dark"><i class="fa fa-check f_size_medium m_right_5"></i>Update</a><br>
+												-->
+												<i class="fa fa-times f_size_medium m_right_5"></i><%= link_to 'Удалить', method: :delete, class: "color_dark" %>
+												<!-- <a href="#" class="color_dark"><i class="fa fa-times f_size_medium m_right_5"></i>Remove</a><br>
+												-->
+											</div>
+										</td>
+										<!--subtotal-->
+										<td data-title="Subtotal">
+											<p class="f_size_large fw_medium scheme_color"><%= item.product.price * item.quantity %> р.</p>
+										</td>
+									</tr>
+									<% end %>
+									<!--prices-->
+									<tr>
+										<td colspan="4">
+											<p class="fw_medium f_size_large t_align_r t_xs_align_c">Всего:</p>
+										</td>
+										<td colspan="1">
+											<p class="fw_medium f_size_large color_dark"><%= @cart.total_price %> р.</p>
+										</td>
+									</tr>
+									
+									
+									
+
+								</tbody>
+								
+							</table>
+							<table>
+								
+							
+								<tr>
+											<td colspan="3" >
+												<%= button_to 'Очистить корзину', @cart, method: :delete, class: "clear-cart button_type_6 bg_scheme_color f_size_large r_corners tr_all_hover color_light m_right_20", data: { confirm: 'Удалить все товары из корзины ?' } %>
+											</td>
+												
+
+											<td colspan="3" >
+												<%= button_to 'Оформить заказ', new_order_path, method: :get, class: "button_type_6 bg_scheme_color f_size_large r_corners tr_all_hover color_light m_bottom_20"  %>
+											</td>	
+								</tr>
+							</table>
+						</section>
+					</div>
+				</div>
+			</div>

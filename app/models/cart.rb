@@ -15,7 +15,9 @@ class Cart < ActiveRecord::Base
 
 	end
 
-
+	def total_price
+		line_items.to_a.sum { |item| item.total_price }
+	end
 
 	def delete_product(product_id)
 		Line_item.find(product_id).destroy
