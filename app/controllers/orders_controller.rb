@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
-  before_create :insert_params_data, only: :create
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
@@ -36,6 +35,20 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
+
+    @products_in_order = ""
+    @total_price = 0
+
+    @order.line_items.each do |item|
+      @total_price += item.product.price
+      @products_in_order << item.product.name
+      @products_in_order << "--"
+      @products_in_order << item.product.sku
+      @products_in_order << ";"
+    end
+
+    @order.products = @products_in_order
+    @order.total_price = @total_price
 
     respond_to do |format|
       if @order.save

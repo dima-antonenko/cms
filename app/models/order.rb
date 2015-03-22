@@ -9,5 +9,7 @@ class Order < ActiveRecord::Base
 		end
 	end
 
-	
+	def insert_params_data(order)
+       @order = Order.find(id)
+    end
 end
