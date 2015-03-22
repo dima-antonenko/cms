@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   include CurrentCart
   before_action :set_cart, only: [:new, :create]
+  before_create :insert_params_data, only: :create
   before_action :set_order, only: [:show, :edit, :update, :destroy]
 
   # GET /orders
@@ -83,4 +84,6 @@ class OrdersController < ApplicationController
     def order_params
       params.require(:order).permit(:name, :address, :email, :pay_type)
     end
+
+    
 end

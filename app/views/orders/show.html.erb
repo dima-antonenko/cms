@@ -1,21 +1,51 @@
-<p id="notice"><%= notice %></p>
+			<div class="page_content_offset">
+				<div class="container">
+					<div class="row clearfix">
+						<!--left content column-->
+						<section class="col-lg-12 col-md-12 col-sm-12">
+						<h2 class="tt_uppercase color_dark m_bottom_25">Информация о заказе</h2>
+									<div id="tab-2">
+										<table class="table_type_7 responsive_table full_width t_align_l">
+											<thead>
+												<tr class="f_size_large">
+													<th>Артикул</th>
+													<th>Название</th>
+													<th>Цена</th>
+													<th>Количество</th>
+													<th>Стоимость</th>
+												</tr>
+											</thead>
+											<tbody>
+											<% @order.line_items.each do |item| %>
+												<tr>
+													<td data-title="SKU"><%= item.product.sku %></td>
+													<td data-title="Product Name">
+														<a href="#" class="color_dark d_inline_b m_bottom_5"><%= item.product.name %></a><br>
+													</td>
+													<td data-title="Price">
+														<p class="f_size_large color_dark"><%= item.product.price %></p>
+													</td>
+													<td data-title="Qty"><%= item.quantity %></td>
+													<td data-title="Total"><p class="color_dark f_size_large"><%= item.product.price * item.quantity %></p></td>
+												</tr>
+											<% end %>
+											<tr colspan="3">
+													<td class="f_size_large d_xs_none">Всего</td>
+													<td data-title="Total"><p class="fw_medium f_size_large scheme_color">$102.00</p></td>
+												</tr>
+												<tr colspan="3">
+													<td class="f_size_large d_xs_none">Номер заказа</td>
+													<td data-title="Order Number"><%= @order.id %></td>
+												</tr>
+												<tr colspan="3">
+													<td class="f_size_large d_xs_none">Дата</td>
+													<td data-title="Order Date"><%= @order.created_at %></td>
+												</tr colspan="3">
+											</tbody>
+										</table>
+									</div>
+						</section>
 
-<p>
-  <strong>Name:</strong>
-  <%= @order.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @order.address %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @order.email %>
-</p>
-
-<p>
-  <strong>Pay type:</strong>
-  <%= @order.pay_type %>
-</p>
+					</div>
+				</div>
+			</div>
