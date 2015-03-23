@@ -29,18 +29,18 @@
 													<td data-title="Total"><p class="color_dark f_size_large"><%= item.product.price * item.quantity %></p></td>
 												</tr>
 											<% end %>
-											<tr colspan="3">
+											    <tr>
 													<td class="f_size_large d_xs_none">Всего</td>
-													<td data-title="Total"><p class="fw_medium f_size_large scheme_color">$102.00</p></td>
+													<td data-title="Total"><p class="fw_medium f_size_large scheme_color"><%= @order.total_price %> р.</p></td>
 												</tr>
-												<tr colspan="3">
+												<tr>
 													<td class="f_size_large d_xs_none">Номер заказа</td>
 													<td data-title="Order Number"><%= @order.id %></td>
 												</tr>
-												<tr colspan="3">
+												<tr>
 													<td class="f_size_large d_xs_none">Дата</td>
 													<td data-title="Order Date"><%= @order.created_at %></td>
-												</tr colspan="3">
+												</tr>
 											</tbody>
 										</table>
 									</div>
