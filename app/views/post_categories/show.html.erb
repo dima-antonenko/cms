@@ -1,4 +1,9 @@
-<p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_post_category_path(@post_category) %> |
-<%= link_to 'Back', post_categories_path %>
+			<div class="page_content_offset">
+				<div class="container">
+					<div class="row clearfix">
+					<%= render('post_categories/blocks/articles_list') %>
+					<%= render('post_categories/blocks/sidebar') %>
+					</div>
+				</div>
+			</div>

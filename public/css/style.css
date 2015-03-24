@@ -419,23 +419,23 @@ body{
 	box-shadow:0 1px 1px rgba(0,0,0,.10);
 }
 mark{
-	background: #e74c3c;
+	background: #c7081b;
 	color:#fff;
 }
 ::selection{
-	background: #e74c3c;
+	background: #c7081b;
 	color:#fff;
 }
 ::-moz-selection{
-	background: #e74c3c;
+	background: #c7081b;
 	color:#fff;	
 }
 ::-o-selection {
-	background: #e74c3c;
+	background: #c7081b;
 	color:#fff;	
 }
 ::-ms-selection {
-	background: #e74c3c;
+	background: #c7081b;
 	color:#fff;
 }
 ::-webkit-input-placeholder{
@@ -473,14 +473,14 @@ a,a[class*="color"]:not(.color_light):hover,.scheme_color,.close_product:hover,
 .close_fieldset:hover,.text_cs_hover:hover,.tweet_list a:hover,[class*="alert_box"].error i[class^="fa "],
 label[class*="required"]:after,.vertical_list_type_7 li:before,.first_letter_1 > .fl,
 .info_block_type_1:hover [class*="icon_wrap"]{
-	color:#e74c3c;
+	color:#c7081b;
 }
 .shopping_cart,[role="banner"],.sub_menu_wrap,.banner_type_2.red,
 .vertical_list_type_3 li:before,.vertical_list_type_7 li:before{
-	border-color:#e74c3c;	
+	border-color:#c7081b;	
 }
 .shopping_cart:before,.sub_menu_wrap:before{
-	border-bottom-color:#e74c3c;
+	border-bottom-color:#c7081b;
 }
 .count,.bg_scheme_color,.button_type_3:hover .count.type_2,
 .button_type_3.active .count.type_2,.main_menu > li:hover > a,.main_menu > li.current > a,
@@ -495,16 +495,16 @@ label[class*="required"]:after,.vertical_list_type_7 li:before,.first_letter_1 >
 .camera_wrap .camera_prev:hover, .camera_wrap .camera_next:hover,.flex-control-nav .flex-active,
 .flex-direction-nav a:hover,.vertical_list_type_4 li:before,.vertical_list_type_8 li:before,
 .first_letter_2 > .fl,.info_block_type_2:hover [class*="icon_wrap"],#shopping_button:hover > a .count{
-	background:#e74c3c;
+	background:#c7081b;
 }
 .select_color.red{
-	background-color:#e74c3c;	
+	background-color:#c7081b;	
 }
 .tp-leftarrow:hover,.tp-rightarrow:hover{
 	background: #d55a4e
 }
 ::-webkit-scrollbar-thumb{
-	background:#e74c3c;	
+	background:#c7081b;	
 }
 
 /* -----------------------------------
@@ -3800,13 +3800,13 @@ fieldset legend .close_fieldset{
 	}
 	.main_menu > li > a{
 		background:#fff;
-		color:#e74c3c;
+		color:#c7081b;
 		-webkit-border-radius:4px;
 		-moz-border-radius:4px;
 		border-radius:4px;
 		text-transform: none;
 		padding:10px 15px;
-		border:1px solid #e74c3c;
+		border:1px solid #c7081b;
 	}
 	.main_menu > li.current > a,.main_menu > li:hover > a,
 	.main_menu > .current_click > a{
