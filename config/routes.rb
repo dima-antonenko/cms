@@ -2,8 +2,6 @@ Rails.application.routes.draw do
 
   get 'persons/profile'
 
-  #get 'persons/profile'
-
   devise_for :users
   resources :static_pages
 
@@ -23,11 +21,18 @@ Rails.application.routes.draw do
 
   root 'static#home'
 
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-
   #get '/static#home', as: 'user_root'
   get 'persons/profile', as: 'user_root'
 
+  #namespace :administrator do
+    #resources :product_categories
+  #end
+
+  scope '/administrator' do
+    resources :product_categories
+  end
+
+  get '/administrator/dashboard', to: 'administrator#dashboard'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

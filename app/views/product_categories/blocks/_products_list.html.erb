@@ -16,7 +16,7 @@
 										<a href="<%= product_category_product_path(@product_category, product) %>" class="d_block relative wrapper pp_wrap m_bottom_15">
 											<!-- <img src="/images/product_img_1.jpg" class="tr_all_hover" alt=""> -->
 											<%= image_tag product.avatar.url(:thumb), class: "tr_all_hover" %>
-											<span role="button" data-popup="#quick_view_product" class="button_type_5 box_s_none color_light r_corners tr_all_hover d_xs_none">Предосмотр</span>
+											
 										</a>
 										<!--description and price of product-->
 										<figcaption>
@@ -24,8 +24,10 @@
 											<p class="scheme_color f_size_large m_bottom_15"><%= product.price %> р.</p>
 											<%= button_to 'Купить', line_items_path(product_id: product), class: "button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15" %>
 											<!-- <button class="button_type_4 bg_scheme_color r_corners tr_all_hover color_light mw_0 m_bottom_15">Купить</button> -->
+
 										</figcaption>
+
 									</figure>
 								</div>
-<% end %>
+							<% end %>
 							</section>
