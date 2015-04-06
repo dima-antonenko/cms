@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'persons/profile'
 
   devise_for :users
-  resources :static_pages
+  resources :static_pages, only: :show
 
   resources :orders
 
@@ -29,7 +29,7 @@ Rails.application.routes.draw do
   #end
 
   scope '/administrator' do
-    resources :product_categories
+    resources :product_categories, only: [ :index, :update, :destroy, :edit, :create ]
   end
 
   get '/administrator/dashboard', to: 'administrator#dashboard'
