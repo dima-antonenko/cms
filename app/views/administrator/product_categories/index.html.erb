@@ -60,8 +60,8 @@
 						<% @product_categories.each do |category| %>
 							<tr>
 								<td>
-									 <%= link_to category.name, edit_product_category_path(category) %> <!-- -->
-									 <%= link_to category.name,  controller: "Administrator::ProductCategrories", action: "edit", id: category.id %>
+									 <%= link_to category.name, administrator_edit_product_category_path(category) %> <!-- -->
+
 								</td>
 								<td>
 									 Alex Nilson

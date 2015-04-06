@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     #resources :product_categories
   #end
 
-  scope '/administrator' do
+  namespace :administrator do
     resources :product_categories, only: [ :index, :update, :destroy, :edit, :create ]
   end
 
