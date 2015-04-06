@@ -33,6 +33,15 @@ Rails.application.routes.draw do
   end
 
   get '/administrator/dashboard', to: 'administrator#dashboard'
+
+
+  #THIS IS VERY BAD !
+
+  get '/administrator/product_categories_all', to: 'administrator#product_categories_all'
+
+
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
