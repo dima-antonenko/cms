@@ -57,10 +57,10 @@
 							</thead>
 							<tbody>
 							
-						<% @product_categories.each do |category| %>
+						<% @products.each do |product| %>
 							<tr>
 								<td>
-									 <%= link_to category.name, edit_administrator_product_category_path(category) %> <!-- -->
+									 <%= link_to product.name, edit_administrator_product_path(product.id) %> <!-- -->
 
 								</td>
 								<td>

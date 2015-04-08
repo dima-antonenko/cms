@@ -1,8 +1,8 @@
 <div class="page-content">
 			<div class="row">
 				<div class="col-md-12">
-					<%= form_for(@product_category) do |f| %>
-					<!-- <form class="form-horizontal form-row-seperated" action="#"> -->
+					<%= form_for(@product) do |f| %>
+					
 						<div class="portlet light">
 							<button> submit</button>
 							<div class="portlet-body">
@@ -33,7 +33,7 @@
 													* </span>
 													</label>
 													<div class="col-md-10">
-														<%= f.text_field :name, class: "form-control" %>
+														<% f.text_field :name, class: "form-control" %>
 													</div>
 												</div>
 											</div>
