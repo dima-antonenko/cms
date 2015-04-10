@@ -29,8 +29,8 @@ Rails.application.routes.draw do
   #end
 
   namespace :administrator do
-    resources :product_categories, only: [ :index, :update, :destroy, :edit, :create ]
-    resources :products, only: [ :index, :update, :destroy, :edit, :create ]
+    resources :product_categories
+    resources :products
   end
 
   get '/administrator/dashboard', to: 'administrator#dashboard'
