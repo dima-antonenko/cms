@@ -1,8 +1,4 @@
-<style type="text/css">
-	#order_pay_type{
 
-	}		
-</style>
 
 				<section class="h_top_part">
 					<div class="container">
@@ -17,14 +13,27 @@
 										    <%= f.label "Имя", class: "d_inline_b m_bottom_5"%><br>
 										    <%= f.text_field :name, size: 40 %>
 										  </div>
-										  <div class="field m_bottom_20">
-										    <%= f.label "Адрес",class: "d_inline_b m_bottom_5"%><br>
-										    <%= f.text_field :address, size: 40 %>
+										  <div class="field  m_bottom_20">
+										    <%= f.label "Номер телефона", class: "d_inline_b m_bottom_5"%><br>
+										    <%= f.text_field :phone_number, size: 40 %>
 										  </div>
 										  <div class="field  m_bottom_20">
 										    <%= f.label "Email", class: "d_inline_b m_bottom_5"%><br>
 										    <%= f.text_field :email, size: 40 %>
 										  </div>
+										  <div class="field m_bottom_20">
+										    <%= f.label "Область", class: "d_inline_b m_bottom_5"%><br>
+										    <%= f.text_field :region, size: 40 %>
+										  </div>
+										  <div class="field m_bottom_20">
+										    <%= f.label "Город",class: "d_inline_b m_bottom_5"%><br>
+										    <%= f.text_field :sity, size: 40 %>
+										  </div>
+										  <div class="field m_bottom_20">
+										    <%= f.label "Адрес",class: "d_inline_b m_bottom_5"%><br>
+										    <%= f.text_field :address, size: 40 %>
+										  </div>
+										  
 										  <div class="field relative  m_bottom_20">
 										    <%= f.label :pay_type, "Способ оплаты", class: "d_inline_b m_bottom_5" %><br>
 										    <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: 'Выберите способ оплаты' %>
