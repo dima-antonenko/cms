@@ -11,7 +11,7 @@ class Administrator::ProductCategoriesController < AdministratorController
 
   	def new
     @product_category = ProductCategory.new
-  end
+    end
 
   # POST /product_categories
   # POST /product_categories.json

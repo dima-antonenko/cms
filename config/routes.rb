@@ -32,6 +32,8 @@ Rails.application.routes.draw do
     resources :product_categories
     resources :products
     resources :orders
+    resources :post_categories
+    resources :posts
   end
 
   get '/administrator/dashboard', to: 'administrator#dashboard'
