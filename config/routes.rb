@@ -31,14 +31,13 @@ Rails.application.routes.draw do
   namespace :administrator do
     resources :product_categories
     resources :products
+    resources :orders
   end
 
   get '/administrator/dashboard', to: 'administrator#dashboard'
 
 
   #THIS IS VERY BAD !
-
-  get '/administrator/product_categories_all', to: 'administrator#product_categories_all'
 
 
 
