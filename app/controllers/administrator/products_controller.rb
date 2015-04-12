@@ -1,4 +1,7 @@
 class Administrator::ProductsController < AdministratorController
+
+ before_action :set_product, only: [:create, :edit, :update, :destroy]
+
 	def index
 		@products = Product.all
 		render 'administrator/products/index'
@@ -35,9 +38,10 @@ class Administrator::ProductsController < AdministratorController
   # PATCH/PUT /products/1
   # PATCH/PUT /products/1.json
   def update
+    @product = Product.find(params[:id])
     respond_to do |format|
-      if @product.update(params["product"])
-        format.html { redirect_to @product, notice: 'Product was successfully updated.' }
+      if @product.update(product_params)
+        format.html { redirect_to '/administrator/products', notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
         format.html { render :edit }
@@ -55,4 +59,16 @@ class Administrator::ProductsController < AdministratorController
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def product_params
+      params.require(:product).permit(:product_category_id, :name, :description, :image,
+        :sku, :meta_title, :meta_description, :meta_keywords, :price)
+  end
+
+  def set_product
+      @product = Product.find(params[:id])
+    end
+
 end
