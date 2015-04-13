@@ -64,7 +64,9 @@ class Administrator::ProductsController < AdministratorController
 
   def product_params
       params.require(:product).permit(:product_category_id, :name, :description, :image,
-        :sku, :meta_title, :meta_description, :meta_keywords, :price, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at)
+        :sku, :meta_title, :meta_description, :meta_keywords, :price, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at,
+        :avatar
+         )
   end
 
   def set_product
