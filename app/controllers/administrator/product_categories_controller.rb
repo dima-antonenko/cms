@@ -1,4 +1,5 @@
 class Administrator::ProductCategoriesController < AdministratorController
+  
 	def index
 		@product_categories = ProductCategory.all
 		render 'administrator/product_categories/index'

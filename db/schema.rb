@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150411045457) do
+ActiveRecord::Schema.define(version: 20150413045927) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -116,6 +116,7 @@ ActiveRecord::Schema.define(version: 20150411045457) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "avatar"
   end
 
   add_index "products", ["image"], name: "index_products_on_image"

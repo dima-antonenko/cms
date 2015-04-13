@@ -1,6 +1,6 @@
 class Administrator::ProductsController < AdministratorController
 
- before_action :set_product, only: [:create, :edit, :update, :destroy]
+ before_action :set_product, only: [:edit, :update, :destroy]
 
 	def index
 		@products = Product.all
@@ -26,7 +26,7 @@ class Administrator::ProductsController < AdministratorController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
+        format.html { redirect_to '/administrator/products', notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new }
@@ -64,7 +64,7 @@ class Administrator::ProductsController < AdministratorController
 
   def product_params
       params.require(:product).permit(:product_category_id, :name, :description, :image,
-        :sku, :meta_title, :meta_description, :meta_keywords, :price)
+        :sku, :meta_title, :meta_description, :meta_keywords, :price, :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at)
   end
 
   def set_product

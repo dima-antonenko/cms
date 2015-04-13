@@ -1,9 +1,9 @@
 class Product < ActiveRecord::Base
+
 	belongs_to :product_category
 	has_many :line_items
 
 	before_destroy :ensure_not_referenced_by_any_line_item
-
 
 	has_attached_file :avatar, :styles => { :medium => "340x280>", :thumb => "242x242>" }, :default_url => "/images/:style/missing.png"
     validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
