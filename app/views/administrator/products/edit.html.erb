@@ -100,14 +100,14 @@
 													<label class="col-md-2 control-label">Цена: </span>
 													</label>
 													<div class="col-md-10">
-														 <%= f.select :product_category_id, :multiple => true %>
+														 <%= f.text_field :price, class: "form-control" %>
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-md-2 control-label">Категория: </span>
 													</label>
 													<div class="col-md-10">
-														 <%= f.select :product_category_id , ProductCategory.all.collect {|category| [category.name, category.id ]}, {} %>
+														 <%= f.select :product_category_id , ProductCategory.all.collect {|category| [category.name, category.id ]}, class: "form-control" %>
 													</div>
 												</div>
 												<div class="form-group">

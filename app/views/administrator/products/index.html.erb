@@ -68,7 +68,7 @@
 										 <%= product.sku %>
 									</td>
 									<td>
-										<a href="#">Удалить</a>
+										 <%= link_to 'Удалить', administrator_product_path(product), method: :delete, data: { confirm: 'Удалить товар ?' } %>
 									</td>
 								</tr>
 							<% end %>
