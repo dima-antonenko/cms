@@ -1,6 +1,6 @@
 class Administrator::ProductsController < AdministratorController
 
- before_action :set_product, only: [:edit, :update, :destroy]
+ before_action :set_product, only: [:edit, :update, :destroy, :delete]
 
 	def index
 		@products = Product.all
@@ -55,7 +55,7 @@ class Administrator::ProductsController < AdministratorController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_to '/administrator/products'
+  
   end
 
   private
