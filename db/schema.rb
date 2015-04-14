@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150413045927) do
+ActiveRecord::Schema.define(version: 20150414062925) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(version: 20150413045927) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "value"
+    t.string   "place"
   end
 
   add_index "site_variables", ["name"], name: "index_site_variables_on_name"
