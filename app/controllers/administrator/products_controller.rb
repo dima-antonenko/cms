@@ -55,7 +55,7 @@ class Administrator::ProductsController < AdministratorController
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
-  
+    redirect_to '/administrator/products'
   end
 
   private
