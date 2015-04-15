@@ -6,7 +6,7 @@
 		clear: none;
 	}
 </style>
-
+<%= csrf_meta_tags%>
 			<div class="page_content_offset">
 				<div class="container">
 					<div class="row clearfix">
@@ -57,7 +57,8 @@
 
 												<!-- <a href="#" class="color_dark"><i class="fa fa-check f_size_medium m_right_5"></i>Update</a><br>
 												-->
-												<i class="fa fa-times f_size_medium m_right_5"></i><%= link_to 'Удалить', method: :delete, class: "color_dark" %>
+												<i class="fa fa-times f_size_medium m_right_5"></i>
+												<%= link_to 'Удалить', line_item_path(item), method: :delete, data: { confirm: 'Удалить товар ?' }, class: "color_dark" %>
 												<!-- <a href="#" class="color_dark"><i class="fa fa-times f_size_medium m_right_5"></i>Remove</a><br>
 												-->
 											</div>
@@ -65,6 +66,7 @@
 										<!--subtotal-->
 										<td data-title="Subtotal">
 											<p class="f_size_large fw_medium scheme_color"><%= item.product.price * item.quantity %> р.</p>
+
 										</td>
 									</tr>
 									<% end %>

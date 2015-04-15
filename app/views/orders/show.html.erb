@@ -39,7 +39,7 @@
 												</tr>
 												<tr>
 													<td class="f_size_large d_xs_none">Дата</td>
-													<td data-title="Order Date"><%= @order.created_at %></td>
+													<td data-title="Order Date"><%= @order.created_at.to_s[2...-4] %></td>
 												</tr>
 											</tbody>
 										</table>

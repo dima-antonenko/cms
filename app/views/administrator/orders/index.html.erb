@@ -52,9 +52,10 @@
 										 +123456
 									</td>	
 									<td>
-										 <%= order.created_at.to_s %>
+										 <%= order.created_at.to_s[2...-4] %>
 									</td>
 									<td>
+										<%= link_to 'Удалить', administrator_order_path(order), method: :delete, data: { confirm: 'Удалить товар ?' } %>
 										<a href="#">Удалить</a>
 									</td>
 								</tr>
