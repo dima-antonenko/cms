@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150414062925) do
+ActiveRecord::Schema.define(version: 20150415030622) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -51,8 +51,13 @@ ActiveRecord::Schema.define(version: 20150414062925) do
     t.string   "meta_title"
     t.string   "meta_description"
     t.string   "meta_keywords"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "avatar"
   end
 
   add_index "post_categories", ["meta_description"], name: "index_post_categories_on_meta_description"
@@ -69,8 +74,13 @@ ActiveRecord::Schema.define(version: 20150414062925) do
     t.string   "meta_title"
     t.string   "meta_description"
     t.string   "meta_keywords"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "avatar"
   end
 
   add_index "posts", ["image"], name: "index_posts_on_image"
@@ -93,6 +103,11 @@ ActiveRecord::Schema.define(version: 20150414062925) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string   "avatar"
   end
 
   add_index "product_categories", ["meta_description"], name: "index_product_categories_on_meta_description"

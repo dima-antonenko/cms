@@ -1,5 +1,7 @@
 class Administrator::ProductCategoriesController < AdministratorController
   
+   before_action :set_product_category, only: [:show, :edit, :update, :destroy]
+
 	def index
 		@product_categories = ProductCategory.all
 		render 'administrator/product_categories/index'
@@ -21,7 +23,7 @@ class Administrator::ProductCategoriesController < AdministratorController
 
     respond_to do |format|
       if @product_category.save
-        format.html { redirect_to @product_category, notice: 'Product category was successfully created.' }
+        format.html { redirect_to '/administrator/product_categories', notice: 'Product category was successfully created.' }
         format.json { render :show, status: :created, location: @product_category }
       else
         format.html { render :new }
@@ -35,7 +37,7 @@ class Administrator::ProductCategoriesController < AdministratorController
   def update
     respond_to do |format|
       if @product_category.update(product_category_params)
-        format.html { redirect_to @product_category, notice: 'Product category was successfully updated.' }
+        format.html { redirect_to '/administrator/product_categories', notice: 'Product category was successfully updated.' }
         format.json { render :show, status: :ok, location: @product_category }
       else
         format.html { render :edit }
@@ -49,9 +51,21 @@ class Administrator::ProductCategoriesController < AdministratorController
   def destroy
     @product_category.destroy
     respond_to do |format|
-      format.html { redirect_to product_categories_url, notice: 'Product category was successfully destroyed.' }
+      format.html { redirect_to '/administrator/product_categories', notice: 'Product category was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
+
+  private
+
+  def product_category_params
+      params.require(:product_category).permit(:name, :description, :image,
+        :meta_title, :meta_description, :meta_keywords,  :avatar_file_name, :avatar_content_type, :avatar_file_size, :avatar_updated_at,
+        :avatar)
+  end
+
+  def set_product_category
+      @product_category = ProductCategory.find(params[:id])
+    end
 
 end

@@ -1,18 +1,75 @@
-<div class="page-content">
+<style type="text/css">
+	.tab-content .form-group{
+		padding-bottom: 50px;
+	}
+</style>
+<script>
+  $(function() {
+    $('textarea#edit').editable({
+      inlineMode: false
+    })
+  });
+</script>
+
+<head><!-- CDN hosted by Cachefly -->
+<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+<script>tinymce.init({selector:'textarea.edit'});</script>
+</head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
+<link href="/admin/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/admin/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
+<link href="/admin/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/admin/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+<link href="/admin/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="/admin/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css"/>
+<link rel="stylesheet" type="text/css" href="/admin/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+<link rel="stylesheet" type="text/css" href="/admin/assets/global/plugins/bootstrap-summernote/summernote.css">
+<!-- END PAGE LEVEL STYLES -->
+<!-- BEGIN THEME STYLES -->
+<link href="/admin/assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="/admin/assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="/admin/assets/admin/layout4/css/layout.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="/admin/assets/admin/layout4/css/themes/light.css" rel="stylesheet" type="text/css"/>
+<link href="/admin/assets/admin/layout4/css/custom.css" rel="stylesheet" type="text/css"/>
+
+
+<div class="page-content-wrapper">
+		<div class="page-content">
 			<div class="row">
 				<div class="col-md-12">
-					<%= form_for(@product_category) do |f| %>
-					<!-- <form class="form-horizontal form-row-seperated" action="#"> -->
+					<%= form_for([:administrator, @product_category], :multipart => true ) do |f| %>
 						<div class="portlet light">
-							<button> submit</button>
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="icon-basket font-green-sharp"></i>
+									<span class="caption-subject font-green-sharp bold uppercase">
+									<%= @product_category.name %> </span>
+									<span class="caption-helper">редактирование категории</span>
+								</div>
+								<div class="actions btn-set">
+									<a href="/administrator/product_categories" class="btn btn-default btn-circle"> Назад </a>
+									 <%= f.submit(class: "btn green-haze btn-circle", value: "Обновить") %>
+									<!-- <button class="btn green-haze btn-circle">Сохранить</button>
+									-->
+								</div>
+							</div>
 							<div class="portlet-body">
 								<div class="tabbable">
 									<ul class="nav nav-tabs">
 										<li class="active">
 											<a href="#tab_general" data-toggle="tab">
-											Главная </a>
+											Основное </a>
 										</li>
-										<li >
+										<li>
 											<a href="#tab_description" data-toggle="tab">
 											Описание </a>
 										</li>
@@ -22,63 +79,81 @@
 										</li>
 										<li>
 											<a href="#tab_seo" data-toggle="tab">
-											SEO</a>
+											SEO
+											</a>
 										</li>
 									</ul>
 									<div class="tab-content no-space">
 										<div class="tab-pane active" id="tab_general">
 											<div class="form-body">
 												<div class="form-group">
-													<label class="col-md-2 control-label">Name: <span class="required">
-													* </span>
+													<label class="col-md-2 control-label">Название: </span>
 													</label>
 													<div class="col-md-10">
-														<%= f.text_field :name, class: "form-control" %>
+														 <%= f.text_field :name, class: "form-control" %>
+													</div>
+												</div>
+
+											</div>
+										</div>
+										<div class="tab-pane" id="tab_description">
+											<div class="form-body">
+												<div class="form-group">
+													<label class="col-md-2 control-label">Описание: </span>
+													</label>
+													<div class="col-md-10">
+														 <%= f.text_area :description, id: "edit", class: "form-control edit" %>
 													</div>
 												</div>
 											</div>
 										</div>
-										<div class="tab-pane " id="tab_description">
+										<div class="tab-pane" id="tab_images">
 											<div class="form-body">
 												<div class="form-group">
-													<label class="col-md-2 control-label">Name: <span class="required">
-													* </span>
+													<label class="col-md-2 control-label">Изображение: </span>
 													</label>
 													<div class="col-md-10">
-														
+														<%= f.file_field :avatar %>
 													</div>
+													<%= image_tag @product_category.avatar.url(:medium) %>
 												</div>
 											</div>
 										</div>
-										<div class="tab-pane " id="tab_images">
-											<div class="form-body">
-												<div class="form-group">
-													<label class="col-md-2 control-label">Name: <span class="required">
-													* </span>
+										<div class="tab-pane" id="tab_seo">
+											<div class="form-group">
+													<label class="col-md-2 control-label">Title: </span>
 													</label>
 													<div class="col-md-10">
-														
+														 <%= f.text_area :meta_title, class: "form-control" %>
 													</div>
 												</div>
-											</div>
-										</div>
-										<div class="tab-pane " id="tab_seo">
-											<div class="form-body">
 												<div class="form-group">
-													<label class="col-md-2 control-label">Name: <span class="required">
-													* </span>
+													<label class="col-md-2 control-label">Description: </span>
 													</label>
 													<div class="col-md-10">
-														
+														 <%= f.text_area :meta_description, class: "form-control" %>
 													</div>
 												</div>
-											</div>
+												<div class="form-group">
+													<label class="col-md-2 control-label">Keywords: </span>
+													</label>
+													<div class="col-md-10">
+														 <%= f.text_area :meta_keywords, class: "form-control" %>
+													</div>
+												</div>
+												</div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					<% end %>
+
 				</div>
 			</div>
+			<!-- END PAGE CONTENT-->
 		</div>
+	</div>
+
+</div>
+
