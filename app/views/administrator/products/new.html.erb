@@ -13,17 +13,53 @@
     })
   });
 </script>
+
+<head><!-- CDN hosted by Cachefly -->
+<script src="//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+<script>tinymce.init({selector:'textarea.edit'});</script>
+</head>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css">
+<link href="/admin/assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="/admin/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css">
+<link href="/admin/assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="/admin/assets/global/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css">
+<link href="/admin/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css"/>
+<!-- END GLOBAL MANDATORY STYLES -->
+<!-- BEGIN PAGE LEVEL STYLES -->
+<link rel="stylesheet" type="text/css" href="/admin/assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css"/>
+<link rel="stylesheet" type="text/css" href="/admin/assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+<link rel="stylesheet" type="text/css" href="/admin/assets/global/plugins/bootstrap-summernote/summernote.css">
+<!-- END PAGE LEVEL STYLES -->
+<!-- BEGIN THEME STYLES -->
+<link href="/admin/assets/global/css/components-rounded.css" id="style_components" rel="stylesheet" type="text/css"/>
+<link href="/admin/assets/global/css/plugins.css" rel="stylesheet" type="text/css"/>
+<link href="/admin/assets/admin/layout4/css/layout.css" rel="stylesheet" type="text/css"/>
+<link id="style_color" href="/admin/assets/admin/layout4/css/themes/light.css" rel="stylesheet" type="text/css"/>
+<link href="/admin/assets/admin/layout4/css/custom.css" rel="stylesheet" type="text/css"/>
+
+
 <div class="page-content-wrapper">
 		<div class="page-content">
 			<div class="row">
 				<div class="col-md-12">
-					<%= form_for([:administrator, @product]) do |f| %>
+					<%= form_for([:administrator, @product], :multipart => true ) do |f| %>
 						<div class="portlet light">
 							<div class="portlet-title">
-								
+								<div class="caption">
+									<i class="icon-basket font-green-sharp"></i>
+									<span class="caption-subject font-green-sharp bold uppercase">
+									Новый товар </span>
+								</div>
 								<div class="actions btn-set">
 									<a href="/administrator/products" class="btn btn-default btn-circle"> Назад </a>
-									 <%= f.submit(class: "btn green-haze btn-circle", value: "Сохранить") %>
+									 <%= f.submit(class: "btn green-haze btn-circle", value: "Создать") %>
 									<!-- <button class="btn green-haze btn-circle">Сохранить</button>
 									-->
 								</div>
@@ -70,7 +106,7 @@
 													<label class="col-md-2 control-label">Категория: </span>
 													</label>
 													<div class="col-md-10">
-														 <%= f.text_field :product_category_id, class: "form-control" %>
+														 <%= f.select :product_category_id , ProductCategory.all.collect {|category| [category.name, category.id ]}, class: "form-control" %>
 													</div>
 												</div>
 												<div class="form-group">
@@ -80,6 +116,8 @@
 														 <%= f.text_field :sku, class: "form-control" %>
 													</div>
 												</div>
+
+
 											</div>
 										</div>
 										<div class="tab-pane" id="tab_description">
@@ -88,7 +126,7 @@
 													<label class="col-md-2 control-label">Описание: </span>
 													</label>
 													<div class="col-md-10">
-														 <%= f.text_area :description,id: "edit", class: "form-control" %>
+														 <%= f.text_area :description, id: "edit", class: "form-control edit" %>
 													</div>
 												</div>
 											</div>
@@ -99,8 +137,9 @@
 													<label class="col-md-2 control-label">Изображение: </span>
 													</label>
 													<div class="col-md-10">
-														<!-- -->
+														<%= f.file_field :avatar %>
 													</div>
+													<%= image_tag @product.avatar.url(:medium) %>
 												</div>
 											</div>
 										</div>
@@ -133,8 +172,12 @@
 							</div>
 						</div>
 					<% end %>
+
 				</div>
 			</div>
 			<!-- END PAGE CONTENT-->
 		</div>
 	</div>
+
+</div>
+
