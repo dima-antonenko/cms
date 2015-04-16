@@ -62,6 +62,11 @@ class CartsController < ApplicationController
     end
   end
 
+
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
+ 
+  
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
@@ -71,5 +76,9 @@ class CartsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def cart_params
       params[:cart]
+    end
+
+    def record_not_found
+      redirect_to '/'
     end
 end

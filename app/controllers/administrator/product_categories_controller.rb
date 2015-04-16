@@ -14,6 +14,7 @@ class Administrator::ProductCategoriesController < AdministratorController
 
   	def new
     @product_category = ProductCategory.new
+    
     end
 
   # POST /product_categories

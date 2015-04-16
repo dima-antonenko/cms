@@ -69,6 +69,6 @@ class PostCategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_category_params
-      params[:post_category]
+      params.require(:post_category).permit(:avatar)
     end
 end
