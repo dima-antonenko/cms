@@ -17,5 +17,8 @@ class AddDataToVariables < ActiveRecord::Migration
 
   	SiteVariable.connection.execute('INSERT INTO "site_variables" (name, value, place, created_at, updated_at)
   	 VALUES ("Информация о компании", "Информация о компании здесь", "page_company_info", "2015-04-14 06:08:13.505610", "2015-04-14 06:08:13.506610")');
+
+    SiteVariable.connection.execute('INSERT INTO "site_variables" (name, value, place, created_at, updated_at)
+     VALUES ("Доставка и оплата текст", "Текст доставки и оплаты", "page_delivery_pay", "2015-04-14 06:08:13.505610", "2015-04-14 06:08:13.506610")');
   end
 end

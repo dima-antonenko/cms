@@ -39,7 +39,12 @@ Rails.application.routes.draw do
 
   get '/administrator/dashboard', to: 'administrator#dashboard'
 
-  #get '/administrator/blocks_header', to: 'administrator::site_variables#blocks_in_header'
+  get '/administrator/blocks_in_header', to: 'administrator/site_variables#blocks_in_header'
+  get '/administrator/blocks_in_footer', to: 'administrator/site_variables#blocks_in_footer'
+  get '/administrator/page_contact', to: 'administrator/site_variables#page_contact'
+  get '/administrator/page_company_info', to: 'administrator/site_variables#page_company_info'
+  get '/administrator/page_delivery_pay', to: 'administrator/site_variables#page_delivery_pay'
+
 
 
   #THIS IS VERY BAD !

@@ -4,17 +4,39 @@ class Administrator::SiteVariablesController < AdministratorController
 
   def index
     @site_variables = SiteVariable.all
-    render 'administrator/site_variables/blocks_in_header'
+    render 'administrator/site_variables/index'
   end
 
   def blocks_in_header
-    @site_variables = SiteVariable.all
+    @site_variables = SiteVariable.where(place: "header")
     render 'administrator/site_variables/blocks_in_header'
   end
 
+  def blocks_in_footer
+    @site_variables = SiteVariable.where(place: "footer")
+    render 'administrator/site_variables/blocks_in_footer'
+  end
+
+  def page_contact
+    @site_variables = SiteVariable.where(place: "page_contact")
+    render 'administrator/site_variables/page_contact'
+  end
+
+  def page_delivery_pay
+    @site_variables = SiteVariable.where(place: "page_delivery_pay")
+    render 'administrator/site_variables/page_delivery_pay'
+  end
+
+  def page_company_info
+    @site_variables = SiteVariable.where(place: "page_company_info")
+    render 'administrator/site_variables/page_company_info'
+  end
+
+
+
   def edit
     @site_variable = SiteVariable.find(params[:id])
-    render 'administrator/site_variable/edit'
+    render 'administrator/site_variables/edit'
   end
 
     # GET /products/new
@@ -27,11 +49,11 @@ class Administrator::SiteVariablesController < AdministratorController
   # POST /products
   # POST /products.json
   def create
-    @site_variable = SiteVariable.new(product_params)
+    @site_variable = SiteVariable.new(site_variable_params)
 
     respond_to do |format|
       if @site_variable.save
-        format.html { redirect_to '/administrator/products', notice: 'SiteVariable was successfully created.' }
+        format.html { redirect_to '/administrator/site_variables', notice: 'SiteVariable was successfully created.' }
         format.json { render :show, status: :created, location: @site_variable }
       else
         format.html { render :new }
@@ -45,8 +67,8 @@ class Administrator::SiteVariablesController < AdministratorController
   def update
     @site_variable = SiteVariable.find(params[:id])
     respond_to do |format|
-      if @site_variable.update(product_params)
-        format.html { redirect_to '/administrator/products', notice: 'SiteVariable was successfully updated.' }
+      if @site_variable.update(site_params)
+        format.html { redirect_to '/administrator/site_variables', notice: 'SiteVariable was successfully updated.' }
         format.json { render :index, status: :ok, location: @site_variable }
       else
         format.html { render :edit }
@@ -60,7 +82,7 @@ class Administrator::SiteVariablesController < AdministratorController
   def destroy
     @site_variable = SiteVariable.find(params[:id])
     @site_variable.destroy
-    redirect_to '/administrator/products'
+    redirect_to '/administrator/site_variables'
   end
 
   private
