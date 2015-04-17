@@ -34,9 +34,12 @@ Rails.application.routes.draw do
     resources :orders
     resources :post_categories
     resources :posts
+    resources :site_variables
   end
 
   get '/administrator/dashboard', to: 'administrator#dashboard'
+
+  #get '/administrator/blocks_header', to: 'administrator::site_variables#blocks_in_header'
 
 
   #THIS IS VERY BAD !

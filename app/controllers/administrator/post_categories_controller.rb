@@ -49,7 +49,7 @@ class Administrator::PostCategoriesController < AdministratorController
   # DELETE /product_categories/1
   # DELETE /product_categories/1.json
   def destroy
-    @product_category.destroy
+    @post_category.destroy
     respond_to do |format|
       format.html { redirect_to '/administrator/post_categories', notice: 'Product category was successfully destroyed.' }
       format.json { head :no_content }
