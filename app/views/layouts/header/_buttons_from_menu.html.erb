@@ -13,7 +13,8 @@
   										<li class="m_left_5">
   											<%
 
-  												if Cart.find(session[:cart_id])
+  												if session[:cart_id]
+  													Cart.find(session[:cart_id])
   													@minicart =  Cart.find(session[:cart_id])
   													@cart_url = "/carts/#{@minicart.id}"
   											%>

@@ -1,15 +1,15 @@
 class AdministratorController < ApplicationController
 
+	before_action :authenticate_user!
+
 	layout "admin"
 
 	def dashboard
 		render "administrator/dashboard"
 	end
 
-	def product_categories_all
-		@product_categories = ProductCategory.all
-		render "/administrator/product_categories/index"
+	def index
+		
 	end
-
 
 end

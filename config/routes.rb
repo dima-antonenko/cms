@@ -22,7 +22,10 @@ Rails.application.routes.draw do
   root 'static#home'
 
   #get '/static#home', as: 'user_root'
-  get 'persons/profile', as: 'user_root'
+  get '/administrator/dashboard', as: 'user_root'
+
+  get '/administrator', to: 'administrator#index'
+
 
   #namespace :administrator do
     #resources :product_categories
@@ -36,6 +39,8 @@ Rails.application.routes.draw do
     resources :posts
     resources :site_variables
   end
+
+  #devise_for :users
 
   get '/administrator/dashboard', to: 'administrator#dashboard'
 
