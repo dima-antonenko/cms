@@ -23,8 +23,6 @@ Rails.application.routes.draw do
 
   get '/administrator/dashboard', as: 'user_root'
 
-   get '/users/sign_out', to:  redirect("/")
-
   #namespace :administrator do
     #resources :product_categories
   #end
