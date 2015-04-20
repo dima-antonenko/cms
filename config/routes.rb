@@ -21,11 +21,9 @@ Rails.application.routes.draw do
 
   root 'static#home'
 
-  #get '/static#home', as: 'user_root'
   get '/administrator/dashboard', as: 'user_root'
 
-  get '/administrator', to: 'administrator#index'
-
+   get '/users/sign_out', to:  redirect("/")
 
   #namespace :administrator do
     #resources :product_categories
@@ -42,7 +40,7 @@ Rails.application.routes.draw do
 
   #devise_for :users
 
-  get '/administrator/dashboard', to: 'administrator#dashboard'
+  get '/administrator', to: 'administrator#dashboard'
 
   get '/administrator/blocks_in_header', to: 'administrator/site_variables#blocks_in_header'
   get '/administrator/blocks_in_footer', to: 'administrator/site_variables#blocks_in_footer'

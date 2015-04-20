@@ -13,23 +13,21 @@
   										<li class="m_left_5">
   											<%
 
-  												if session[:cart_id]
-  													Cart.find(session[:cart_id])
-  													@minicart =  Cart.find(session[:cart_id])
-  													@cart_url = "/carts/#{@minicart.id}"
+  												if @minicart
   											%>
+
+
   													<li class="m_left_5 relative container3d" id="shopping_button">
 											<a role="button" href="<%= @cart_url %>" class="button_type_3 color_light bg_scheme_color d_block r_corners tr_delay_hover box_s_none">
 												<span class="d_inline_middle shop_icon">
 													<i class="fa fa-shopping-cart"></i>
 												</span>
 												</span>
-												<b><%= @minicart.total_price %></b>
+												<b><%= @minicart.total_price %> р</b>
 											</a>
 										</li>
-  												<% end %>
-  											
-											
+  												
+											<% end %>
 										</li>	
 
 										 
