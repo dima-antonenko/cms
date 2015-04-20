@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
 
   def minicart_in_head
     if session[:cart_id]
-      Cart.find(session[:cart_id])
       @minicart =  Cart.find(session[:cart_id])
       @cart_url = "/carts/#{@minicart.id}"
     end                

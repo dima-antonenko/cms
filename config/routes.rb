@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'persons/profile'
-
-  devise_for :users
+  
   resources :static_pages, only: :show
 
   resources :orders
@@ -22,6 +20,12 @@ Rails.application.routes.draw do
   root 'static#home'
 
   get '/administrator/dashboard', as: 'user_root'
+
+  get 'persons/profile'
+
+  devise_for :users
+
+  #get '/users/sign_out', to: 'user_session#destroy'
 
   #namespace :administrator do
     #resources :product_categories

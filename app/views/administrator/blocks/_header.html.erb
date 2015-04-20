@@ -17,8 +17,8 @@
 			<!-- BEGIN TOP NAVIGATION MENU -->
 			<div class="top-menu" style="margin: 25px 20px 0 0; ">
 			<% if user_signed_in? %>
-			<%= current_user.email %> |
-							<%= link_to "Выйти", destroy_user_session_path, method: :delete %>
+				<%= current_user.email %> |
+				<%= link_to "Выйти", destroy_user_session_path, method: :delete %>
 			<% end %>				
 				
 			</div>
