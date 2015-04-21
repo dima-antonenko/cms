@@ -23,9 +23,11 @@ Rails.application.routes.draw do
 
   get 'persons/profile'
 
-  devise_for :users
+  #devise_for :users
 
-  #get '/users/sign_out', to: 'user_session#destroy'
+
+
+ devise_for :users, controllers: { sessions: "users/sessions" }
 
   #namespace :administrator do
     #resources :product_categories

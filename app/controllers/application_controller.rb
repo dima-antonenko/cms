@@ -20,4 +20,8 @@ class ApplicationController < ActionController::Base
     end                
   end
 
+  def metrika_values
+    
+  end
+
 end

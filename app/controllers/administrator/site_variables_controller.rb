@@ -72,7 +72,7 @@ class Administrator::SiteVariablesController < AdministratorController
   def update
     @site_variable = SiteVariable.find(params[:id])
     respond_to do |format|
-      if @site_variable.update(site_params)
+      if @site_variable.update(site_variable_params)
         format.html { redirect_to '/administrator/site_variables', notice: 'SiteVariable was successfully updated.' }
         format.json { render :index, status: :ok, location: @site_variable }
       else
@@ -93,7 +93,7 @@ class Administrator::SiteVariablesController < AdministratorController
   private
 
   def site_variable_params
-      params.require(:site_variable).permit(:title, :content)
+      params.require(:site_variable).permit(:name, :place, :value)
   end
 
   def set_site_variable
