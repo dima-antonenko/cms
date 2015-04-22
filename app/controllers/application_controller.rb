@@ -26,10 +26,6 @@ class ApplicationController < ActionController::Base
     end                
   end
 
-  def metrika_values
-    @yandex_metrika = SiteVariable.find(1)
-    @google_metrika = SiteVariable.find(2)
-  end
 
   def errors_404
     response.should render_template(:file => "#{Rails.root}/public/404.html")
