@@ -3,10 +3,10 @@ class AddDataToVariables < ActiveRecord::Migration
 
     
     SiteVariable.connection.execute('INSERT INTO "site_variables" (id, name, value, place, created_at, updated_at)
-     VALUES ("Код яндекс метрики", "Здесь будет код", "settings", "2015-04-14 06:08:13.505610", "2015-04-14 06:08:13.506610")');
+     VALUES ("1", "Код яндекс метрики", "Здесь будет код", "settings", "2015-04-14 06:08:13.505610", "2015-04-14 06:08:13.506610")');
 
     SiteVariable.connection.execute('INSERT INTO "site_variables" (id, name, value, place, created_at, updated_at)
-     VALUES ("Код гугл аналитики", "Здесь будет код", "settings", "2015-04-14 06:08:13.505610", "2015-04-14 06:08:13.506610")');
+     VALUES ("2", "Код гугл аналитики", "Здесь будет код", "settings", "2015-04-14 06:08:13.505610", "2015-04-14 06:08:13.506610")');
 
   	SiteVariable.connection.execute('INSERT INTO "site_variables" (name, value, place, created_at, updated_at) VALUES
   	 ("Номер телефона", "+7 123 456 78", "footer", "2015-04-14 06:08:13.505610" , "2015-04-14 06:08:13.505612")');
