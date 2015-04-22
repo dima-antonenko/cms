@@ -29,5 +29,11 @@ class AddDataToVariables < ActiveRecord::Migration
     SiteVariable.connection.execute('INSERT INTO "site_variables" (name, value, place, created_at, updated_at)
      VALUES ("Доставка и оплата текст", "Текст доставки и оплаты", "page_delivery_pay", "2015-04-14 06:08:13.505610", "2015-04-14 06:08:13.506610")');
 
+    Users.connection.execute('INSERT INTO "site_variables" (email, encrypted_password,  remember_created_at,
+      sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at)
+     VALUES ("d.antonenko94@mail.ru", "$2a$10$2K.HHIYgUGfuM6QlLYgIQOaRZE1KR5onMcWcXiLFR7fPaWQswrrmO", "2015-04-21 13:18:33.376890",
+      "40", "2015-04-21 13:18:33.529918", "2015-04-20 14:28:28.304498", "127.0.0.1", "127.0.0.1", "2015-03-12 07:03:28.328922", "2015-03-12 07:03:28.328929"
+      )');
+
   end
 end
