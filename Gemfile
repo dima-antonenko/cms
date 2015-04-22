@@ -67,3 +67,6 @@ group :production do
   gem 'pg', '0.15.1'
   gem 'unicorn'
 end
+
+gem 'capistrano', '~> 3.0', require: false, group: :development
+gem 'capistrano-sidekiq'
