@@ -11,23 +11,23 @@ role :app, %w{dima-antonenko@laston.dima-antonenko.lclients.ru}
 
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
+#set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
 
 
 # - for unicorn - #
-namespace :deploy do
-  desc "Start application"
-  task :start, :roles => :app do
-    run unicorn_start_cmd
-  end
+#namespace :deploy do
+#  desc "Start application"
+#  task :start, :roles => :app do
+#    run unicorn_start_cmd
+#  end
 
-  desc "Stop application"
-  task :stop, :roles => :app do
-    run "[ -f #{unicorn_pid} ] && kill -QUIT `cat #{unicorn_pid}`"
-  end
+#  desc "Stop application"
+#  task :stop, :roles => :app do
+#    run "[ -f #{unicorn_pid} ] && kill -QUIT `cat #{unicorn_pid}`"
+ # end
 
-  desc "Restart Application"
-  task :restart, :roles => :app do
-    run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
-  end
-end
+ # desc "Restart Application"
+#  task :restart, :roles => :app do
+  #  run "[ -f #{unicorn_pid} ] && kill -USR2 `cat #{unicorn_pid}` || #{unicorn_start_cmd}"
+  #end
+#end
