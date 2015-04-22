@@ -4,22 +4,22 @@ class Users::SessionsController < Devise::SessionsController
 layout false
 
   # GET /resource/sign_in
-  def new
-    super
+ # def new
+  #  super
 
-  end
+#  end
 
   # POST /resource/sign_in
-   def create
-     super
+#   def create
+ #    super
      
-   end
+  # end
 
   # DELETE /resource/sign_out
-   def destroy
-     super
+   #def destroy
+    # super
     
-   end
+  # end
 
   # protected
 
