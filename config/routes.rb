@@ -56,6 +56,8 @@ Rails.application.routes.draw do
 
 
 
+match "/404" => "application#errors_404", via: [ :get, :post, :patch, :delete ]
+
   #THIS IS VERY BAD !
 
 

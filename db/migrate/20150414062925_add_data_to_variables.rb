@@ -1,5 +1,13 @@
 class AddDataToVariables < ActiveRecord::Migration
   def change
+
+    
+    SiteVariable.connection.execute('INSERT INTO "site_variables" (id, name, value, place, created_at, updated_at)
+     VALUES ("Код яндекс метрики", "Здесь будет код", "settings", "2015-04-14 06:08:13.505610", "2015-04-14 06:08:13.506610")');
+
+    SiteVariable.connection.execute('INSERT INTO "site_variables" (id, name, value, place, created_at, updated_at)
+     VALUES ("Код гугл аналитики", "Здесь будет код", "settings", "2015-04-14 06:08:13.505610", "2015-04-14 06:08:13.506610")');
+
   	SiteVariable.connection.execute('INSERT INTO "site_variables" (name, value, place, created_at, updated_at) VALUES
   	 ("Номер телефона", "+7 123 456 78", "footer", "2015-04-14 06:08:13.505610" , "2015-04-14 06:08:13.505612")');
   	
@@ -21,10 +29,5 @@ class AddDataToVariables < ActiveRecord::Migration
     SiteVariable.connection.execute('INSERT INTO "site_variables" (name, value, place, created_at, updated_at)
      VALUES ("Доставка и оплата текст", "Текст доставки и оплаты", "page_delivery_pay", "2015-04-14 06:08:13.505610", "2015-04-14 06:08:13.506610")');
 
-    SiteVariable.connection.execute('INSERT INTO "site_variables" (name, value, place, created_at, updated_at)
-     VALUES ("Код яндекс метрики", "Здесь будет код", "settings", "2015-04-14 06:08:13.505610", "2015-04-14 06:08:13.506610")');
-
-    SiteVariable.connection.execute('INSERT INTO "site_variables" (name, value, place, created_at, updated_at)
-     VALUES ("Код гугл аналитики", "Здесь будет код", "settings", "2015-04-14 06:08:13.505610", "2015-04-14 06:08:13.506610")');
   end
 end

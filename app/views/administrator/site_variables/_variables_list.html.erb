@@ -36,7 +36,7 @@
 									 <%= link_to variable.name, edit_administrator_site_variable_path(variable) %> <!-- -->
 								</td>
 								<td>
-									 <%= variable.value  %> <!-- -->
+									 <%= variable.value.html_safe  %> <!-- -->
 								</td>
 								<td>
 									<%= variable.updated_at.to_s[2...-4] %>

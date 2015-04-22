@@ -7,4 +7,7 @@ class AdministratorController < ApplicationController
 	def dashboard
 		render "administrator/dashboard"
 	end
+
+	
 end
+
