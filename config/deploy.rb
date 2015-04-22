@@ -8,7 +8,7 @@ set :deploy_to, '/home/hosting_dima-antonenko/projects/laston'
 set :linked_files, %w{config/database.yml}
 
   
-hosting_dima-antonenko:xaPFjibKdW@sulfur.locum.ru
+role :app, "hosting_dima-antonenko:xaPFjibKdW@sulfur.locum.ru"
 
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
