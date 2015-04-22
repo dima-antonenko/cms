@@ -11,13 +11,7 @@ role :app, %w{dima-antonenko@laston.dima-antonenko.lclients.ru}
 
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-
-before 'deploy:finalize_update', 'set_current_release'
-task :set_current_release, :roles => :app do
-    set :current_release, latest_release
-end
-
-  set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
+set :unicorn_start_cmd, "(cd #{deploy_to}/current; rvm use #{rvm_ruby_string} do bundle exec unicorn_rails -Dc #{unicorn_conf})"
 
 
 # - for unicorn - #
