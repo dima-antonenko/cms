@@ -56,7 +56,10 @@ group :development, :test do
 	gem 'binding_of_caller'
 	gem 'bullet'
 
-	gem 'capistrano', github: 'capistrano/capistrano', ref: '96a16'
+	gem 'capistrano-rails', '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-rvm', '~> 0.1', require: false
+  gem 'capistrano', '~> 3.0', require: false
 end
 
 
