@@ -56,10 +56,10 @@ group :development, :test do
 	gem 'binding_of_caller'
 	gem 'bullet'
 
-	gem 'capistrano-rails', '~> 1.1', require: false
-  gem 'capistrano-bundler', '~> 1.1', require: false
-  gem 'capistrano-rvm', '~> 0.1', require: false
-  gem 'capistrano', '~> 3.0', require: false
+	gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
 end
 
 
@@ -67,6 +67,3 @@ group :production do
   gem 'pg', '0.15.1'
   gem 'unicorn'
 end
-
-gem 'capistrano', '~> 3.0', require: false, group: :development
-gem 'capistrano-sidekiq'
