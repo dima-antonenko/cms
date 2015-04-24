@@ -29,6 +29,9 @@ gem 'devise'
 
 gem 'paperclip', '~> 4.2.1'
 
+gem 'seed_dump'
+
+gem 'will_paginate', '~> 3.0.6'
 
 #gem 'rmagick', '2.13.4'
 
